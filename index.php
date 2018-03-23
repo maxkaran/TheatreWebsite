@@ -2,7 +2,7 @@
   <head>
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="register_style.css">
-  <head>
+  </head>
 	<style> 
 		label {
 			text-align: center;
