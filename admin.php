@@ -22,7 +22,6 @@
 		
 		<br />
 		
-		<form method="post" action=
 	</div>
   </body>
 </html>
