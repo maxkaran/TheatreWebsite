@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <html>
 <head>
 	<title><?php echo $_GET['title'];?></title>
@@ -23,8 +26,8 @@
 		}
 		while ($row = $showings->fetch())
 		{
-			echo "<p>" . "Starts at: " . $row['start_time'] . " Available Seats: " . $row['available_seats'] . " Theater Number: " . $row['screen_number'] . "</p>";
-			echo "<form action=reserve.php>";
+			echo "<p>" . "Starts at: " . $row['start_time'] . " Theater Number: " . $row['screen_number'] . "</p>";
+			echo "<form action=movie.php?complex=" . urlencode($thisComplexName) . "&title=" . urlencode($thisMovieName) . "&start_time=" . urlencode($row['start_time']) . " method=post>";
 			echo "Number of tickets: <select name=tickets>";
 			echo "<option value=1>1</option>";
 			echo "<option value=2>2</option>";
@@ -39,9 +42,32 @@
 			echo "</select>";
 			echo "<input type=submit>";
 			echo "</form>";
+			echo "<p>" . " Available Seats: " . $row['available_seats'] . "</p>";
 			//echo "<a href=movie.php?complex=" . urlencode($thisComplexName) . "&title=" . urlencode($row['title']) . ">See show times</a>";
 		}
-	}
+		if(isset($_POST['tickets'])){
+			$start_time = $_GET['start_time'];
+			$numOfTickets = $_POST['tickets'];
+			reserveTickets($numOfTickets, $thisComplexName, $thisMovieName, $start_time);
+		}
+		}
+		function reserveTickets($numOfTickets, $thisComplexName, $thisMovieName, $start_time) {
+			$myPDO = new PDO('mysql:host=localhost;dbname=movietheatredatabase', 'root', '');
+			
+			$available = $myPDO->query("SELECT * FROM showing WHERE complex_name='$thisComplexName' AND movie_title='$thisMovieName' AND start_time='$start_time'");
+			if($row = $available->fetch())
+			{
+				$availableSeats = $row['available_seats'];
+				$screenNum = $row['screen_number'];
+			}
+			if($availableSeats - $numOfTickets > 0)
+			{
+				$rowsSet = $myPDO->query("UPDATE showing SET available_seats='$availableSeats'-'$numOfTickets' WHERE complex_name='$thisComplexName' AND movie_title='$thisMovieName' AND start_time='$start_time'");
+				echo "Successfully Purchased " . $numOfTickets . " Ticket(s)";
+				//$accntNum = $_SESSION['account_number'];
+				//$makeReservation = $myPDO->query("INSERT INTO reservation VALUES '$numOfTickets', '$accntNum', '$screenNum', '$thisComplexName'");
+			}
+		}
 		// list show times 
 		// provide links to each howing
 		getMovieInfo();

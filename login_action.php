@@ -18,6 +18,10 @@
 		//$result->bindParam(':pass', $pass);
 		$result->execute(array($email,$pass));
 		$result->setFetchMode(PDO::FETCH_ASSOC);
+		while($row = $result->fetch())
+		{
+			$account_number = $row['account_number'];
+		}
 		
 		//echo $result->rowCount();
 		$_SESSION['email'] = $email;
@@ -26,7 +30,9 @@
 			exit();
 		}else{
 		
+
 		$_SESSION['password'] = $pass;
+		$_SESSION['account_number'] = $account_number;
 		header('Location: account.php');
 		}
 		

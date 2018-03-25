@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
 	<title>Theater Complexes</title>
@@ -23,6 +26,11 @@
 		<?php
 		getComplexes();
 		?>
+	</div>
+	<div>
+		<h1>Manage Account</h1>
+		<a href="view_purchases.php">View your purchases</a><br><br>
+		<a href="view_profile.php">View and edit your profile</a>
 	</div>
 </body>
 </html>
