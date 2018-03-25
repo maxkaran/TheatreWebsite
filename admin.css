@@ -15,6 +15,8 @@ body {
   padding: 20px;
 }
 
+
+
 .header {
   width: 40%;
   margin: 50px auto 0px;
@@ -33,7 +35,16 @@ body {
   display: block;
   text-align: left;
   margin: 3px;
+  color: black;
 }
+
+label {
+  display: block-inline;
+  text-align: left;
+  margin: 3px;
+  color: black;
+}
+
 .input-group input {
   height: 30px;
   width: 93%;
@@ -49,6 +60,7 @@ body {
   background: #5F9EA0;
   border: none;
   border-radius: 5px;
+  width: 80px;
 }
 .error {
   width: 92%; 

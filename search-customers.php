@@ -9,8 +9,8 @@
 		</div>
 		<br />
 		<div class="container" style="margin: auto;" align="center">
-			<table align="center" style="border: 1px solid black; float: center; width: 45%;">
-				<tr style="border: 1px solid black;"><th>First Name</th><th>Last Name</th><th>Account Number</th><th></th>
+			<table align="center" style="border: 1px solid black; float: center; width: 100%;">
+				<tr style="border: 1px solid black;"><th>First Name</th><th>Last Name</th><th>Account Number</th><th> </th>
 				<?php
 					session_start();
 					$myPDO = new PDO('mysql:host=localhost;dbname=movietheatredatabase', 'root', '');
@@ -19,11 +19,12 @@
 					
 					if($search == ""){
 						$result = $myPDO->prepare("SELECT * FROM customer");
+						$result->execute();
 					}else{
-						
+						$result = $myPDO->prepare("SELECT * FROM customer WHERE account_number=?");
+						$result->execute(array($search));
 					}
 					
-					$result->execute();
 					
 					while ($row = $result->fetch(PDO::FETCH_ASSOC))
 					{
@@ -35,6 +36,8 @@
 					
 				?>
 			</table>
+			<br /> <br />
+			<a href="admin.php">Back</a>
 		</div>
 	
 	
