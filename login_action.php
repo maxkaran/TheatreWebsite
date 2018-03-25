@@ -9,6 +9,8 @@
 		
 		
 		if(strcmp($email, "root")==0 && strcmp($pass, "123")==0){
+			$_SESSION['email'] = $email;
+			$_SESSION['password'] = $pass;
 			header('Location: admin.php');
 			exit();
 		}
