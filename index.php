@@ -58,7 +58,7 @@
 		<FORM ACTION=login_action.php METHOD=POST>
 			<img src="login.jpg" alt="Come join us!" class="center" />
 			<br />
-			<label for="name">Email</label> <INPUT TYPE=TEXT NAME="email"><BR>
+			<label for="email">Email</label> <INPUT TYPE=TEXT NAME="email"><BR>
 			<label for="password">Password</label> <INPUT TYPE=PASSWORD NAME="password">
 			<br />
 			<div class="input-group">
