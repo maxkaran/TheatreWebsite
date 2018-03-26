@@ -41,7 +41,7 @@
 						<th><input type=\"date\" name=\"start$title\" value=$start size=\"10\"></th>
 						<th><input type=\"date\" name=\"end$title\" value=$end size=\"10\"></th>
 						<th><button type=\"submit\" name=\"button$title\">SAVE</button></th></form>
-						<th><form action=\"edit-times?title=$title\" method=\"post\"><button type=\"submit\" name=time$title>Edit Showtimes</button></form></th>";
+						<th><form action=\"edit-times.php?title=$title\" method=\"post\"><button type=\"submit\" name=time$title>Edit Showtimes</button></form></th>";
 					}
 					$title = "new";
 					

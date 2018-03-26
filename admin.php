@@ -65,6 +65,10 @@
 			$most_pop_movie = $most_pop['movie_title'];
 			echo "<br /><p style=\"color: black; background-color: white;\">The most popular movie is $most_pop_movie!</p>";
 		?>
+		<br />
+		<form method="post" action="index.php">
+			<button type="submit" class="btn" name="search" style="margin: auto; display: block-inline;">Logout</button>
+		</form>
 		
 	</div>
   </body>
