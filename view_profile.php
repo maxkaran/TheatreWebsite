@@ -24,7 +24,8 @@ session_start();
 			echo "<p>Address: " . $row['street_address'] . " " . $row['city'] . " " . $row['province'] . " " . $row['postal_code'];
 			echo "<p>Credit Card Number: " . $row['credit_card_number'];
 			echo "<p>Credit Card Expiration Date: " . $row['credit_card_expiry'];
-
 		}
 		?>
+		<br><br>
+		<a href="edit_profile.php">Edit Profile</a>
 	</div>
