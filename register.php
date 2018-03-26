@@ -13,7 +13,6 @@
 	if($pass1 != $pass2 || $pass1 == "" || $pass2 == ""){
 		echo "Passwords must match and cannot be empty! Please try again...";
 		header( "refresh:5; url=register_form.php" );
-		exit();
 	}
 	
 	$street_address = $_POST['street_address'];
@@ -29,6 +28,7 @@
 	
 	$new_account_num = $new_num->fetch(PDO::FETCH_ASSOC);
 	$new_account_num = $new_account_num['oldID'] + 1; //this is the new account number for the registrant
+	echo $new_account_num;
 	
 	$insert = $myPDO->prepare("INSERT INTO customer VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 	$insert->execute(array($new_account_num,$pass1,$fname,$lname,$phone_number,$email,$province,$city,$street_address,$postal_code,$credit_card_number,$credit_expiry_date));
@@ -36,6 +36,6 @@
 	$_SESSION['password'] = $pass1;
 	$_SESSION['email'] = $email;
 	
-	header("url=index.php");
+	header("url=account.php");
 	
 ?>

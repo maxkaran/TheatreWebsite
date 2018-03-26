@@ -40,11 +40,4 @@ session_start();
 		}
 		?>
 	</div>
-	<div>
-		<h2>Past purchases</h2>
-		<?php
-		//list all past purchases
-
-		?>
-	</div>
 </body>

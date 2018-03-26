@@ -4,16 +4,20 @@
 <html>
 <head>
 	<title><?php echo "Review for " . $_GET['title'];?></title>
-	<link rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="review.css">
 </head>
 <body>
 	<div>
 		<h1><?php echo "Review for " . $_GET['title'];?></h1>
+		<?php
+		$url = "movie.php?complex=" . urlencode($_GET['complex']) . "&title=" . urlencode($_GET['title']);
+		echo "<a href=" . $url . ">BACK</a>";
+		?>
 	</div>
-	<div>
+	<div id="review-content">
 		<?php
 		echo "<form method=post action=review.php?complex=" . urlencode($_GET['complex']) . "&title=" . urlencode($_GET['title']) . ">";
-		echo "Star Rating: <select name=stars>";
+		echo "Star Rating: <select name=stars class=stars>";
 		echo "<option value=0>0</option>";
 		echo "<option value=1>1</option>";
 		echo "<option value=2>2</option>";
@@ -21,7 +25,7 @@
 		echo "<option value=4>4</option>";
 		echo "<option value=5>5</option>";
 		echo "</select>";
-		echo "<textarea name=review_content>Enter Review Here...</textarea>";
+		echo "<textarea class=reviewbody name=review_content>Enter Review Here...</textarea>";
 		echo "<input type=submit value='Post Review'";
 		function postReview($movieTitle, $stars, $reviewContent) {
 			$accountNumber = $_SESSION['account_number'];

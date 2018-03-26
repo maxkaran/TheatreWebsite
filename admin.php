@@ -14,8 +14,10 @@
 	</div>
 	<div class="container">
 		<form method="post" action="search-customers.php">
-			<label for="customers" color="black">List Accounts</label> 
-			<button type="submit" class="btn" name="search" style="margin: auto; display: block-inline;">Go!</button>
+			<label for="customers" color="black">Search an Account  </label> 
+			<INPUT TYPE=TEXT NAME="customers"> 
+			<button type="submit" class="btn" name="search" style="margin: auto; display: block-inline;">Search!</button>
+			<label for="customers" style="font-size: 15px;" color="black">(leave empty for all accounts)</label> 
 		</form>
 		
 		<br />
@@ -70,6 +72,7 @@
 			<button type="submit" class="btn" name="search" style="margin: auto; display: block-inline;">Logout</button>
 		</form>
 		
+>>>>>>> f32f08c8ccfd9b78d71b89dad83732b26e3433aa
 	</div>
   </body>
 </html>

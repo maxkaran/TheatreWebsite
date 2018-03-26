@@ -30,6 +30,7 @@
 						$postal = $row['postal_code'];
 						
 						echo "<tr><form action=\"edit-complex.php?name=$name\" method=\"post\">
+
 						<th><input type=\"text\" name=\"name\" value='$name' size=\"20\"></th>
 						<th><input type=\"text\" name=\"screens$name\" value='$screens' size=\"10\"></th>
 						<th><input type=\"text\" name=\"phone$name\" value='$phone' size=\"10\"></th>
@@ -49,7 +50,8 @@
 						<th><input type=\"text\" name=\"city$name\" size=\"10\"></th>
 						<th><input type=\"text\" name=\"province$name\" size=\"10\"></th>
 						<th><input type=\"text\" name=\"postal$name\" size=\"6\"></th>
-						<th><button type=\"submit\" name=\"button$name\">Add!</button></th></form>";
+						<th><button type=\"submit\" name=\"button$name\">Add New!</button></th></form>
+						<th><form action=\"edit-screens?name=$name\" method=\"post\"><button type=\"submit\" name=$name$screens>Edit Theatres</button></form></th>";
 					
 				?>
 			</table>
