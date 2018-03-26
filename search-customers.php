@@ -10,7 +10,7 @@
 		<br />
 		<div class="container" style="margin: auto;" align="center">
 			<table align="center" style="border: 1px solid black; float: center; width: 100%;">
-				<tr style="border: 1px solid black;"><th>First Name</th><th>Last Name</th><th>Account Number</th><th> </th>
+				<tr style="border: 1px solid black;"><th>First Name</th><th>Last Name</th><th>Account Number</th><th> </th><th> </th>
 				<?php
 					session_start();
 					$myPDO = new PDO('mysql:host=localhost;dbname=movietheatredatabase', 'root', '');
@@ -31,7 +31,11 @@
 						$fname = $row['first_name'];
 						$lname = $row['last_name'];
 						$acc_num = $row['account_number'];
-						echo "<tr><th>$fname</th><th>$lname</th><th>$acc_num</th><th><form action=\"delete.php?account=$acc_num\" method=\"post\"><button type=\"submit\" name=$acc_num>DELETE</button></form></th>";
+						echo "<tr><th>$fname</th>
+						<th>$lname</th>
+						<th>$acc_num</th>
+						<th><form action=\"delete.php?account=$acc_num\" method=\"post\"><button type=\"submit\" name=$acc_num>DELETE</button></form></th>
+						<th><form action=\"purchasehistory.php?account=$acc_num\" method=\"post\"><button type=\"submit\" name=1$acc_num>Purchase History</button></form></th>";
 					}
 					
 				?>
