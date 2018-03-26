@@ -24,6 +24,5 @@
 			$update->execute(array($newtitle, $newrunning, $newrating, $newsynopsis, $newdirector, $newproduction, $newstart, $newend, $title));
 		}
 	}
-
 	header("Location: edit-movies.php");
 ?>

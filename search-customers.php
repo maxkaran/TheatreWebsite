@@ -3,12 +3,12 @@
 	<title>Customers</title>
 	<link rel="stylesheet" type="text/css" href="admin.css">
   </head>
-    <body>
+    <body background="popcorn-movie-party-entertainment.jpg" style="background-size: cover;">
 		<div class="header">
 			<h1>Search Results</h1>
 		</div>
 		<br />
-		<div class="container" style="margin: auto;" align="center">
+		<div class="container" style="margin: auto; background-color: white;" align="center">
 			<table align="center" style="border: 1px solid black; float: center; width: 100%;">
 				<tr style="border: 1px solid black;"><th>First Name</th><th>Last Name</th><th>Account Number</th><th> </th>
 				<?php

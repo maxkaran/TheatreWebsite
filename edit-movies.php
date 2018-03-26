@@ -8,7 +8,7 @@
 			<h1>Edit Movies</h1>
 		</div>
 		<br />
-		
+		<div class="container" style=" background-color: white; width: 100%;">
 			<table style="border: 1px solid black; float: center; width: 100%;" style="background-color:white">
 				<tr style="border: 1px solid black;"><th>Title</th><th>Running Time</th><th>Rating</th><th>Synopsis</th><th>Director</th><th>Production Company</th><th>Start Date</th><th>End Date</th><th></th>
 				<?php
@@ -45,7 +45,7 @@
 					}
 					$title = "new";
 					
-					echo "<tr><form action=\"edit-movies.php?title=$title\" method=\"post\">
+					echo "<tr><form action=\"edit-movies-action.php?title=$title\" method=\"post\">
 						<th><input type=\"text\" name=\"title\" size=\"10\"></th>
 						<th><input type=\"text\" name=\"running$title\" size=\"10\"></th>
 						<th><input type=\"text\" name=\"rating$title\" size=\"10\"></th>
@@ -62,7 +62,7 @@
 			<br /> <br />
 			<a href="admin.php" style="margin:auto; text-align:center; display:block;">Back</a>
 	
-	
+	</div>
 	
 	</body>
 </html>
