@@ -72,7 +72,6 @@
 			<button type="submit" class="btn" name="search" style="margin: auto; display: block-inline;">Logout</button>
 		</form>
 		
->>>>>>> f32f08c8ccfd9b78d71b89dad83732b26e3433aa
 	</div>
   </body>
 </html>
