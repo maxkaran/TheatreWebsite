@@ -6,5 +6,7 @@
 <body>
 <?php
 echo $_POST['tickets'];
+$myPDO = new PDO('mysql:host=localhost;dbname=movietheatredatabase', 'root', '');
+$ticketsRemaining = $myPDO->query("SELECT * FROM movies WHERE complex_name='$thisComplexName' AND title='$thisMovieName'");
 ?>
 </body>

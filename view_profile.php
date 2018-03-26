@@ -9,6 +9,7 @@ session_start();
 <body>
 	<div>
 		<h1>Your Profile</h1>
+		<a href="account.php">BACK</a>
 	</div>
 	<div>
 		<?php

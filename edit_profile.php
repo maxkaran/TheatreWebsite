@@ -9,6 +9,7 @@ session_start();
 <body background="popcorn-movie-party-entertainment.jpg" style="background-size: cover;">
   <div class="header">
   	<h2>Edit Profile</h2>
+    <a href="account.php">BACK</a>
   </div>
 	<?php
   $myPDO = new PDO('mysql:host=localhost;dbname=movietheatredatabase', 'root', '');

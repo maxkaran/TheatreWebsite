@@ -7,6 +7,8 @@
 	<?php
 		echo $_GET['name'];
 	?>
+	<br><br>
+	<a href="account.php">BACK</a>
 	<div class="container">
 		<?php
 		function getMovies() {

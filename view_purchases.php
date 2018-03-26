@@ -9,6 +9,7 @@ session_start();
 <body>
 	<div>
 		<h1>Your Reservations</h1>
+		<a href="account.php">BACK</a>
 	</div>
 	<div>
 		<h2>Current Reservations</h2>

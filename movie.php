@@ -24,6 +24,7 @@
 			//echo "<button type=button onclick=>" . $row['name'] . "</button>";
 			//echo "<a href=movie.php?complex=" . urlencode($thisComplexName) . "&title=" . urlencode($row['title']) . ">See show times</a>";
 		}
+		echo "<a href=complex.php?name=" . urlencode($thisComplexName) .">BACK</a><br><br>";
 		echo "<a href=review.php?complex=" . urlencode($thisComplexName) . "&title=" . urlencode($_GET['title']) . ">Leave a Review</a>";
 		while ($row = $showings->fetch())
 		{
